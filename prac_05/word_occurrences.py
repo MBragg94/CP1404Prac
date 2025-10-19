@@ -1,19 +1,15 @@
-"""
-CP1404/CP5632 Practical
-State names in a dictionary
-File needs reformatting
-"""
-from operator import index
+"""Estimate about 20 minutes"""
+user_input = input("Please enter a string: ")
+words = user_input.split()
+string_to_word = {"this", "is", "a", "collection", "of", "words", "of", "nice", "words", "this", "is", "a", "fun",
+                  "thing", "it", "is"}
+for word in words:
+    word = word.lower()
+    if word in string_to_word:
+        string_to_word[] += 1
+    else:
+        string_to_word[word] = 1
 
-# TODO: Reformat this file so the dictionary code follows PEP 8 convention
-CODE_TO_NAME = {"QLD":"Queensland", "NSW":"New South Wales", "NT":"Northern Territory", "WA":"Western Australia",
-                "ACT":"Australian Capital Territory","VIC":"Victoria", "TAS":"Tasmania"}
-print(f"{CODE_TO_NAME} is ")
-
-# state_code = input("Enter short state: ").upper()
-# while state_code != "":
-#     if state_code in CODE_TO_NAME:
-#         print(state_code, "is", CODE_TO_NAME[state_code])
-#     else:
-#         print("Invalid short state")
-#     state_code = input("Enter short state: ").upper()
+print("\nWord Occurrences:")
+for word, count in string_to_word.items():
+    print(f"{word}: {count}")
